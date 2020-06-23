@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/MusicianBandsApp/Views/Musicians/Index.cshtml
+/MusicianBandsApp/Views/Musicians/EditMusician.cshtml
+/MusicianBandsApp/Views/Musicians/DetailsMusician.cshtml
+/MusicianBandsApp/Views/Musicians/DeleteMusician.cshtml
+/MusicianBandsApp/Views/Musicians/CreateMusician.cshtml
