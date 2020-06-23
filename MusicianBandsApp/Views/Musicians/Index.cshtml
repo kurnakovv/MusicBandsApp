@@ -1,8 +1,67 @@
-﻿
+﻿@model IEnumerable<MusicianBandsApp.Models.Musician>
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/_ViewStart.cshtml";
+    ViewBag.Title = "Каталог музыкантов";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Каталог музыкантов</h2>
 
+<p>
+    @Html.ActionLink("Добавить нового музыканта", "CreateMusician") |
+    @Html.ActionLink("Каталог музыкальных групп", "Index", "Bands")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Band.BandName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusicianName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusicianDateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusicianRole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusicianImage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Band.BandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusicianName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusicianDateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusicianRole)
+            </td>
+            <td>
+                <img class="img100x100" src="~/img/@item.MusicianImage" />
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "EditMusician", new { id = item.MusicianId }) |
+                @Html.ActionLink("Детали", "DetailsMusician", new { id = item.MusicianId }) |
+                @Html.ActionLink("Удалить", "DeleteMusician", new { id = item.MusicianId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<p>
+    @Html.ActionLink("Добавить нового музыканта", "CreateMusician") |
+    @Html.ActionLink("Каталог музыкальных групп", "Index", "Bands")
+</p>

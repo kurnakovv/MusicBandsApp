@@ -178,6 +178,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Musicians\Index.cshtml" />
+    <Content Include="Views\Musicians\DetailsMusician.cshtml" />
+    <Content Include="Views\Musicians\CreateMusician.cshtml" />
+    <Content Include="Views\Musicians\EditMusician.cshtml" />
+    <Content Include="Views\Musicians\DeleteMusician.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

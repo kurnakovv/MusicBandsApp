@@ -1,8 +1,50 @@
-﻿
+﻿@model MusicianBandsApp.Models.Musician
+
 @{
-    ViewBag.Title = "DetailsMusician";
-    Layout = "~/Views/_ViewStart.cshtml";
+    ViewBag.Title = "Детали " + Model.MusicianName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DetailsMusician</h2>
+<h2>Детали @Model.MusicianName</h2>
 
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicianName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicianName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicianDateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicianDateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicianRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicianRole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicianImage)
+        </dt>
+
+        <dd>
+            <img class="img100x100" src="~/img/@Model.MusicianImage" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "EditMusician", new { id = Model.MusicianId }) |
+    @Html.ActionLink("Вернуться к каталогу", "Index")
+</p>

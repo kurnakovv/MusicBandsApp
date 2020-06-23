@@ -1,8 +1,57 @@
-﻿
+﻿@model MusicianBandsApp.Models.Musician
+
 @{
-    ViewBag.Title = "DeleteMusician";
-    Layout = "~/Views/_ViewStart.cshtml";
+    ViewBag.Title = "Удалить музыканта " + Model.MusicianName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DeleteMusician</h2>
+<h2>Удалить @Model.MusicianName</h2>
 
+<h3>Вы уверены что хотите удалить музыканта @Model.MusicianName?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicianName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicianName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicianDateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicianDateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicianRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicianRole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicianImage)
+        </dt>
+
+        <dd>
+            <img class="img100x100" src="~/img/@Model.MusicianImage" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться к каталогу", "Index")
+        </div>
+    }
+</div>
