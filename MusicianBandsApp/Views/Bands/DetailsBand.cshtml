@@ -1,0 +1,82 @@
+﻿@using MusicianBandsApp.Models
+@model Band
+
+@{
+    ViewBag.Title = "Детали " + Model.BandName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Детали группы @Model.BandName</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandDateOfCreation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandDateOfCreation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandGenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandImage)
+        </dt>
+
+        <dd>
+            <img class="default-img" src="~/img/@Model.BandImage" />
+        </dd>
+    </dl>
+</div>
+
+<hr />
+
+<h2>Музыканты в группе</h2>
+
+<tr>
+    @foreach (Musician musician in Model.Musicians)
+    {
+        <td>
+            @musician.MusicianName
+
+        </td>
+        <td>
+            (@musician.MusicianRole)
+        </td>
+        <br />
+        <td>
+            <img class="img100x100" src="~/img/@musician.MusicianImage" />
+        </td>
+        <br />
+    }
+</tr>
+
+<hr />
+<p>
+    @Html.ActionLink("Изменить", "EditBand", new { id = Model.BandId }) |
+    @Html.ActionLink("Вернуться к каталогу", "Index")
+</p>

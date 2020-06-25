@@ -127,14 +127,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BandsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MusiciansController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006220946326__initial.cs" />
-    <Compile Include="Migrations\202006220946326__initial.designer.cs">
-      <DependentUpon>202006220946326__initial.cs</DependentUpon>
+    <Compile Include="Migrations\202006250856267__initial.cs" />
+    <Compile Include="Migrations\202006250856267__initial.designer.cs">
+      <DependentUpon>202006250856267__initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -183,6 +184,11 @@
     <Content Include="Views\Musicians\CreateMusician.cshtml" />
     <Content Include="Views\Musicians\EditMusician.cshtml" />
     <Content Include="Views\Musicians\DeleteMusician.cshtml" />
+    <Content Include="Views\Bands\Index.cshtml" />
+    <Content Include="Views\Bands\DetailsBand.cshtml" />
+    <Content Include="Views\Bands\CreateBand.cshtml" />
+    <Content Include="Views\Bands\EditBand.cshtml" />
+    <Content Include="Views\Bands\DeleteBand.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -202,8 +208,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006220946326__initial.resx">
-      <DependentUpon>202006220946326__initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006250856267__initial.resx">
+      <DependentUpon>202006250856267__initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

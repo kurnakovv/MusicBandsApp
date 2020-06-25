@@ -22,7 +22,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
 .img100x100 {
     width: 100px;
     height: 100px;
+}
+
+.default-img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
 }

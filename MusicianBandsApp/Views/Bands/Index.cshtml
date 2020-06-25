@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MusicianBandsApp.Models.Band>
+
+@{
+    ViewBag.Title = "Каталог групп";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Каталог музыкальных групп</h2>
+
+<p>
+    @Html.ActionLink("Добавить новую группу", "CreateBand") |
+    @Html.ActionLink("Каталог музыкантов", "Index", "Musicians")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BandName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BandDateOfCreation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BandCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BandGenre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BandImage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandDateOfCreation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandGenre)
+            </td>
+            <td>
+                <img class="default-img" src="~/img/@item.BandImage" />
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "EditBand", new { id = item.BandId }) |
+                @Html.ActionLink("Детали", "DetailsBand", new { id = item.BandId }) |
+                @Html.ActionLink("Удалить", "DeleteBand", new { id = item.BandId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Добавить новую группу", "CreateBand") |
+    @Html.ActionLink("Каталог музыкантов", "Index", "Musicians")
+</p>
+

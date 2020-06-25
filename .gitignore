@@ -343,3 +343,4 @@ healthchecksdb
 /MusicianBandsApp/Views/Musicians/DetailsMusician.cshtml
 /MusicianBandsApp/Views/Musicians/DeleteMusician.cshtml
 /MusicianBandsApp/Views/Musicians/CreateMusician.cshtml
+/MusicianBandsApp/Migrations

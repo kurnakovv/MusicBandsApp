@@ -1,0 +1,66 @@
+﻿@model MusicianBandsApp.Models.Band
+
+@{
+    ViewBag.Title = "Удалить группу " + Model.BandName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удалить @Model.BandName</h2>
+
+<h3>Вы уверены что хотите удалить группу @Model.BandName?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandDateOfCreation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandDateOfCreation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandGenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandImage)
+        </dt>
+
+        <dd>
+            <img class="default-img" src="~/img/@Model.BandImage" />
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться к каталогу", "Index")
+        </div>
+    }
+</div>
