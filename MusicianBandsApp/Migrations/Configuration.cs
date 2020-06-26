@@ -21,11 +21,11 @@
             Band b4 = new Band { BandId = 4, BandName = "Imagine Dragons", BandDateOfCreation = 2008, BandCountry = "США", BandGenre = "Альтернатива", BandImage = "Imagine_Dragons.jpg" };
             Band b5 = new Band { BandId = 5, BandName = "Green Day", BandDateOfCreation = 1986, BandCountry = "США", BandGenre = "Поп-панк", BandImage = "Green_Day.jpg" };
 
-            context.Bands.Add(b1);
-            context.Bands.Add(b2);
-            context.Bands.Add(b3);
-            context.Bands.Add(b4);
-            context.Bands.Add(b5);
+            context.Bands.AddOrUpdate(b1);
+            context.Bands.AddOrUpdate(b2);
+            context.Bands.AddOrUpdate(b3);
+            context.Bands.AddOrUpdate(b4);
+            context.Bands.AddOrUpdate(b5);
 
             Musician m1 = new Musician { MusicianId = 1, MusicianName = "Агнета Фельтског", MusicianDateOfBirth = 1950, MusicianRole = "Вокалист", BandId = 1, MusicianImage = "Агнета_Фельтског.jpg" };
             Musician m2 = new Musician { MusicianId = 2, MusicianName = "Бьорн Ульвеус", MusicianDateOfBirth = 1945, MusicianRole = "Вокалист", BandId = 1, MusicianImage = "Бьорн_Ульвеус.jpg" };
@@ -48,27 +48,27 @@
 
             Musician m16 = new Musician { MusicianId = 16, MusicianName = "Билли Джо Армстронг", MusicianDateOfBirth = 1972, MusicianRole = "Вокалист, гитарист", BandId = 5, MusicianImage = "Билли_Джо_Армстронг.jpg" };
             Musician m17 = new Musician { MusicianId = 17, MusicianName = "Майкл Дёрнт", MusicianDateOfBirth = 1972, MusicianRole = "Бас-гитарист, бэк-вокал", BandId = 5, MusicianImage = "Майкл_Дёрнт.jpg" };
-            Musician m18 = new Musician { MusicianId = 18, MusicianName = "Тре Кул", MusicianDateOfBirth = 1972, MusicianRole = "Барабанщик", BandId = 5 };
+            Musician m18 = new Musician { MusicianId = 18, MusicianName = "Тре Кул", MusicianDateOfBirth = 1972, MusicianRole = "Барабанщик", BandId = 5, MusicianImage = "Тре_Кул.jpg" };
 
 
-            context.Musicians.Add(m1);
-            context.Musicians.Add(m2);
-            context.Musicians.Add(m3);
-            context.Musicians.Add(m4);
-            context.Musicians.Add(m5);
-            context.Musicians.Add(m6);
-            context.Musicians.Add(m7);
-            context.Musicians.Add(m8);
-            context.Musicians.Add(m9);
-            context.Musicians.Add(m10);
-            context.Musicians.Add(m11);
-            context.Musicians.Add(m12);
-            context.Musicians.Add(m13);
-            context.Musicians.Add(m14);
-            context.Musicians.Add(m15);
-            context.Musicians.Add(m16);
-            context.Musicians.Add(m17);
-            context.Musicians.Add(m18);
+            context.Musicians.AddOrUpdate(m1);
+            context.Musicians.AddOrUpdate(m2);
+            context.Musicians.AddOrUpdate(m3);
+            context.Musicians.AddOrUpdate(m4);
+            context.Musicians.AddOrUpdate(m5);
+            context.Musicians.AddOrUpdate(m6);
+            context.Musicians.AddOrUpdate(m7);
+            context.Musicians.AddOrUpdate(m8);
+            context.Musicians.AddOrUpdate(m9);
+            context.Musicians.AddOrUpdate(m10);
+            context.Musicians.AddOrUpdate(m11);
+            context.Musicians.AddOrUpdate(m12);
+            context.Musicians.AddOrUpdate(m13);
+            context.Musicians.AddOrUpdate(m14);
+            context.Musicians.AddOrUpdate(m15);
+            context.Musicians.AddOrUpdate(m16);
+            context.Musicians.AddOrUpdate(m17);
+            context.Musicians.AddOrUpdate(m18);
 
 
             base.Seed(context);
